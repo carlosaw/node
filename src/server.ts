@@ -11,6 +11,8 @@ server.engine('mustache', mustache());
 
 server.use(express.static( path.join(__dirname, '../public') ));// Acessa tudo no browser
 
+server.use(express.urlencoded({extended: true}));// Para enviar req.body
+
 server.use(mainRoutes);
 
 server.use((req: Request, res: Response)=>{
